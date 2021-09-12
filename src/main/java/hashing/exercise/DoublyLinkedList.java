@@ -125,6 +125,21 @@ public class DoublyLinkedList<Key extends Comparable<Key>, Value>
        return N;
     }
 
+    public void print()
+    {
+       Node current = head;
+
+       while(current != null)
+       {
+          System.out.println(String.format("key:%s, value:%s", 
+                                              current.key,
+                                              current.value));
+
+          current = current.next;
+       }
+
+    }
+
     private class Node
     {
        private Key key;

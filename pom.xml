@@ -12,6 +12,7 @@
         <junit.jupiter.version>5.7.2</junit.jupiter.version>
         <junit.platform.version>1.5.2</junit.platform.version>
         <maven-surefire-version>3.0.0-M1</maven-surefire-version>
+        <junit.version>4.13.2</junit.version>
     </properties>
     <dependencies>
         <dependency>
@@ -31,7 +32,16 @@
             <version>${junit.platform.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>${junit.version}</version>
+	    <scope>test</scope>
+        </dependency>
+
     </dependencies>
+
+    <!--
     <build>
         <plugins>
             <plugin>
@@ -63,4 +73,5 @@
             </plugin>
         </plugins>
     </build>
+    -->
 </project>
