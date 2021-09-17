@@ -1,12 +1,12 @@
 package hashing.exercise;
 
-public class MyHashMap<Key extends Comparable<Key>,Value >
+public class MyHashMap
 {
 
     private int N; // current, total key value pairs
     private int M; // size of Hashtable
 
-    private DoublyLinkedList<Key,Value>[] lists;
+    private DoublyLinkedList<String,String>[] lists;
 
 
     public MyHashMap()
@@ -17,7 +17,7 @@ public class MyHashMap<Key extends Comparable<Key>,Value >
     public MyHashMap(int M)
     {
        this.M = M;
-       lists = (DoublyLinkedList<Key,Value>[])new Object[M];
+       lists = (DoublyLinkedList<String,String>[])new Object[M];
 
        for(int i = 0; i < M; i++)
        {
@@ -26,24 +26,29 @@ public class MyHashMap<Key extends Comparable<Key>,Value >
 
     }
 
-    public void put(Key key, Value value)
+    public void put(String key, String value)
     {
        lists[hash(key)].put(key,value);
     }
 
-    public Value get(Key key)
+    public String get(String key)
     {
        return lists[hash(key)].get(key);
     }
 
-    public void delete(Key key)
+    public void delete(String key)
     {
        lists[hash(key)].delete(key);
     }
 
-    private int hash(Key key)
+    private int hash(String key)
     {
        return key.hashCode()%M;
+    }
+
+    private static int intValue(char x)
+    {
+       return (int)x - (int)'a';
     }
 
 }
