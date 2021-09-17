@@ -9,7 +9,7 @@ The hashing function/formula used is from sec 3.7 from the Book 'The Algorithm D
 
 Hashtable:
 Hashtable size is set as 997 by default - prime number.
-We also have a MyHashMap constructor that accepts HashTable as an argument so that we can set a customized Hashtable size
+We also have a MyHashMap constructor that accepts HashTable size as an argument so that we can set a customized Hashtable size
 
 
 Assumptions:
