@@ -3,6 +3,8 @@ package hashing.exercise;
 public class MyHashMap
 {
 
+    private static int ALPHA=26;
+
     private int N; // current, total key value pairs
     private int M; // size of Hashtable
 
@@ -17,7 +19,7 @@ public class MyHashMap
     public MyHashMap(int M)
     {
        this.M = M;
-       lists = (DoublyLinkedList<String,String>[])new Object[M];
+       lists = (DoublyLinkedList<String,String>[])new DoublyLinkedList[M];
 
        for(int i = 0; i < M; i++)
        {
@@ -41,9 +43,18 @@ public class MyHashMap
        lists[hash(key)].delete(key);
     }
 
-    private int hash(String key)
+    public int hash(String key)
     {
-       return key.hashCode()%M;
+       long hash = 0;
+       int L = key.length();
+
+       for(int i = 0; i < L; i++ )
+       {
+          hash += Math.pow(ALPHA, L-(i+1))*intValue(key.charAt(i));
+       }
+ 
+       return (int)(hash%M);
+
     }
 
     private static int intValue(char x)
