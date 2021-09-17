@@ -1,21 +1,31 @@
-Interview coding question:
+Readme
+======
+
+This program, MyHashMap.java, is a customized implementation of HashMap to store key value pairs.
+Separate Chaining Algorithm is used to implement this hashMap. For Chaining Storage, we use DoublyLinkedList. DoublyLinkedList is also implemented as part of this exercise.
+
+Hashing:
+The hashing function/formula used is from sec 3.7 from the Book 'The Algorithm Design Manual' by Steven S.Skiena. Each of the lower case alphabet set {a,b,c,...,z} is assigned the int values {0,1,2,...,25} 
+
+Hashtable:
+Hashtable size is set as 997 by default - prime number.
+We also have a MyHashMap constructor that accepts HashTable as an argument so that we can set a customized Hashtable size
 
 
-Implement a hash-map data structure from scratch , where both key and value are of string data type.
-The details of how a hash works can be found in Chapter 11 of the book "Introduction to
-Algorithms" by Cormen, Leiserson, Rivest. You should also refer to Section 3.7 of "The
-Algorithm Design Manual" by Steven Skiena. For the required hash-map implementation,
-the following conditions hold true:
-1. The key is made up of lower-case english alphabets only (a,b,c...z). It can be of any
-length.
-2. Values are of string data type.
-3. The hash function to be used is the one given in Section 3.7 of Skiena.
-4. Choose a suitable size of the hash-map, that is, the number of buckets. It should be
-greater than 100.
-4. Collisions will be resolved using Chaining. Doubly linked lists will be used to store
-colliding entries.
-You will have to implement the following operations on the hash-map:
-a. Create an empty hash-map.
-b. Insert a (key, value) pair into the hash-map.
-c. Delete a (key) from the hash-map (if present).
-d. Search for a (key) in the hash-map, and if present return its value. Else return null.
+Assumptions:
+   All key, value will be just String,String.
+   All the key will from the lower case alphabet set {a,b,...,z}
+
+In this customized HashMap, following functions are implemented
+a.insert
+b.get
+c.delete
+
+JUnit testing is done using the following CLI
+
+mvn clean test -Dtest=hashing.exercise.TestMyHashMap
+mvn clean test -Dtest=hashing.exercise.TestDoublyLinkedList
+
+
+
+You can find complete problem statement in Exercise.txt

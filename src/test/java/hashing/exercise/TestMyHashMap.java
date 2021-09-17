@@ -42,5 +42,29 @@ public class TestMyHashMap
    }
 
 
+   @Test
+   public void testDelete()
+   {
+      MyHashMap myHashMap = new MyHashMap();
+
+      myHashMap.put("first", "One");
+      myHashMap.put("second", "Two");
+      myHashMap.put("third", "Three");
+      myHashMap.put("fourth", "Four");
+      myHashMap.put("fifth", "Five");
+      myHashMap.put("sixth", "Six");
+
+      assertEquals("Six",myHashMap.get("sixth"));
+      assertEquals("Four",myHashMap.get("fourth"));
+      assertEquals("Five",myHashMap.get("fifth"));
+      assertEquals("Three",myHashMap.get("third"));
+      assertEquals("Two",myHashMap.get("second"));
+      assertEquals("One",myHashMap.get("first"));
+      assertEquals(null,myHashMap.get("gixth"));
+
+      myHashMap.delete("sixth");
+      assertEquals(null,myHashMap.get("sixth"));
+
+   }
 
 }
